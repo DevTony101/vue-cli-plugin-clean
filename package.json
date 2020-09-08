@@ -1,0 +1,25 @@
+{
+  "name": "vue-cli-plugin-clean",
+  "version": "0.0.1",
+  "description": "vue-cli plugin to clean your vue project, leaving just an empty Home view.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevTony101/vue-cli-plugin-clean.git"
+  },
+  "keywords": [
+    "vue",
+    "clean",
+    "clear",
+    "utility"
+  ],
+  "author": "Miguel Manjarres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevTony101/vue-cli-plugin-clean/issues"
+  },
+  "homepage": "https://github.com/DevTony101/vue-cli-plugin-clean#readme"
+}
