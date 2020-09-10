@@ -1,8 +1,7 @@
 const fs = require("fs-extra");
 
 module.exports = (api) => {
-  const files = ["views/About.vue"];
-
+  const directories = ["views/", "components/"];
   api.render("./template");
   api.extendPackage({
     dependencies: {
@@ -11,11 +10,10 @@ module.exports = (api) => {
   });
 
   api.onCreateComplete(() => {
-    fs.emptyDirSync(api.resolve("src/components/"));
-    fs.mkdirSync(api.resolve("src/components/base"));
-    for (let i = 0; i < files.length; i++) {
-      const file = `src/${files[i]}`;
-      if (fs.existsSync(file)) fs.unlinkSync(api.resolve(file));
+    for (let i = 0; i < directories.length; i++) {
+      const dir = `src/${directories[i]}`;
+      if (fs.ensureDirSync(dir)) fs.emptyDirSync(api.resolve(dir));
     }
+    fs.mkdir(api.resolve("src/components/base"));
   });
 };
