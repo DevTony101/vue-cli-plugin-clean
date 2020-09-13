@@ -27,9 +27,37 @@ function addPrettierConfig(api) {
   });
 }
 
-function addBaseComponents(api) {
+function addTailwindConfig(api) {
   api.extendPackage({
     dependencies: {
+      tailwindcss: "^1.7.3",
+      autoprefixer: "^9.8.6",
+    },
+  });
+
+  api.render((files) => {
+    files["postcss.config.js"] = api.genJSConfig({
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    });
+
+    files["tailwind.config.js"] = api.genJSConfig({
+      purge: [],
+      theme: {
+        extend: {},
+      },
+      variants: {},
+      plugins: [],
+      future: {},
+    });
+  });
+}
+
+function addBaseComponents(api) {
+  api.extendPackage({
+    devDependencies: {
       lodash: "^4.17.19",
     },
   });
@@ -37,4 +65,4 @@ function addBaseComponents(api) {
   api.render("./template");
 }
 
-module.exports = { prettierConfig, addBaseComponents };
+module.exports = { addPrettierConfig, addBaseComponents, addTailwindConfig };

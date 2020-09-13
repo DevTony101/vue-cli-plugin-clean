@@ -7,11 +7,9 @@ module.exports = (api, options) => {
   api.render("./template");
   if (options.scaffold) optionals.addBaseComponents(api);
   if (options.prettier) optionals.addPrettierConfig(api);
+  if (options.tailwind) optionals.addTailwindConfig(api);
   
-  api.onCreateComplete(() => {
-    emptyDirs(directories);
-  });
-
+  api.onCreateComplete(() => emptyDirs(directories));
   function emptyDirs(directories) {
     for (let i = 0; i < directories.length; i++) {
       const directory = `src/${directories[i]}`;

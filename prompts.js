@@ -5,6 +5,12 @@ module.exports = pkg => {
       name: 'scaffold',
       message: 'Add support for base components?',
       default: false,
+    },
+    {
+      type: 'confirm',
+      name: 'tailwind',
+      message: 'Add support for tailwind?',
+      default: false,
     }
   ]
 
