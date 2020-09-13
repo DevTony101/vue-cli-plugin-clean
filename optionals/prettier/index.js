@@ -25,4 +25,7 @@ module.exports = function addPrettierConfig(api) {
       vueIndentScriptAndStyle: true,
     });
   });
+
+  modifiedFiles.push(".eslintrc.js");
+  createdFiles.push(".prettierrc.js");
 }

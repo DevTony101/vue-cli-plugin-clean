@@ -31,4 +31,9 @@ module.exports = function addTailwindConfig(api) {
       future: {},
     });
   });
+
+  createdFiles.push("src/assets/css/tailwind.css");
+  createdFiles.push("tailwind.config.js");
+  createdFiles.push("postcss.config.js");
+  if (!modifiedFiles.includes("src/main.js")) modifiedFiles.push("src/main.js")
 }
