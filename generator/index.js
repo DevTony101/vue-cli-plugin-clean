@@ -5,8 +5,8 @@ const optionals = require("../optionals/index");
 module.exports = (api, options) => {
   const directories = ["views/", "components/"];
   api.render("./template");
-  if (options.scaffold) optionals.scaffoldProject(api);
-  if (options.prettier) optionals.prettierConfig(api);
+  if (options.scaffold) optionals.addBaseComponents(api);
+  if (options.prettier) optionals.addPrettierConfig(api);
   
   api.onCreateComplete(() => {
     emptyDirs(directories);

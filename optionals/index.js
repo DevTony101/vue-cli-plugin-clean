@@ -1,4 +1,4 @@
-function prettierConfig(api) {
+function addPrettierConfig(api) {
   api.render((files) => {
     files[".eslintrc.js"] = api.genJSConfig({
       root: true,
@@ -27,7 +27,7 @@ function prettierConfig(api) {
   });
 }
 
-function scaffoldProject(api) {
+function addBaseComponents(api) {
   api.extendPackage({
     dependencies: {
       lodash: "^4.17.19",
@@ -37,4 +37,4 @@ function scaffoldProject(api) {
   api.render("./template");
 }
 
-module.exports = { prettierConfig, scaffoldProject };
+module.exports = { prettierConfig, addBaseComponents };
