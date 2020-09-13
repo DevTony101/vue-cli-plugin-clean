@@ -27,4 +27,14 @@ function prettierConfig(api) {
   });
 }
 
-module.exports = { prettierConfig };
+function scaffoldProject(api) {
+  api.extendPackage({
+    dependencies: {
+      lodash: "^4.17.19",
+    },
+  });
+
+  api.render("./template");
+}
+
+module.exports = { prettierConfig, scaffoldProject };
