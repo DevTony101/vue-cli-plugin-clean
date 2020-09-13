@@ -73,7 +73,9 @@ After your project has been created with the `vue-cli` service, add the plugin l
 ```
 vue add clean
 ```
-It'll then ask you what additional features (the ones seen above) do you want to add, **by default they are all set to true**, which means they are all going to be addef unless said otherwise. Please note that if you don't select any feature, the plugin will only delete the files mentioned above and install no additional dependency.
+It'll then ask you what additional features (the ones seen above) do you want to add, **by default they are all set to true**, which means they are all going to be added unless said otherwise.
+
+**Note**: This plugin is only intended to be used right after a project is created as it deletes **all** the components. This might change in future versions.
 
 ## License
 [MIT](https://github.com/DevTony101/vue-cli-plugin-clean/blob/master/LICENSE)
