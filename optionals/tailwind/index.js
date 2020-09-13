@@ -1,4 +1,11 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = function addTailwindConfig(api) {
+  const root = api.resolve("src/../");
+  api.injectImports(api.entryFile, `import './assets/css/tailwind.css'`);
+  api.render("./template")
+  
   api.extendPackage({
     dependencies: {
       tailwindcss: "^1.7.3",
