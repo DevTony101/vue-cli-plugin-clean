@@ -2,13 +2,12 @@ const fs = require("fs");
 const path = require("path");
 const optionals = require("../optionals/index");
 
-module.exports = (api) => {
+module.exports = (api, options) => {
   const directories = ["views/", "components/"];
-
   api.render("./template");
-  optionals.prettierConfig(api);
-  optionals.scaffoldProject(api);
-
+  if (options.scaffold) optionals.scaffoldProject(api);
+  if (options.prettier) optionals.prettierConfig(api);
+  
   api.onCreateComplete(() => {
     emptyDirs(directories);
   });
