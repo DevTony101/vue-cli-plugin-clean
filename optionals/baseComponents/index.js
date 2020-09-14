@@ -14,5 +14,5 @@ module.exports = function addBaseComponents(api) {
   api.render("./template");
   createdFiles.push("public/icons.svg");
   createdFiles.push("src/components/base/BaseIcon.vue");
-  if (!modifiedFiles.includes("src/main.js")) modifiedFiles.push("src/main.js")
+  if (!modifiedFiles.includes(`src/${api.entryFile}`)) modifiedFiles.push(`src/${api.entryFile}`);
 }
