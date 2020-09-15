@@ -1,1 +1,2 @@
 // Service Plugin
+module.exports = () => {}
