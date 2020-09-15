@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function addTailwindConfig(api) {
-  api.injectImports(api.entryFile, `import './assets/css/tailwind.css'`);
+  api.injectImports(api.entryFile, `import "./assets/css/tailwind.css"`);
   api.render("./template");
   
   api.extendPackage({
@@ -34,5 +34,5 @@ module.exports = function addTailwindConfig(api) {
   createdFiles.push("src/assets/css/tailwind.css");
   createdFiles.push("tailwind.config.js");
   createdFiles.push("postcss.config.js");
-  if (!modifiedFiles.includes(`src/${api.entryFile}`)) modifiedFiles.push(`src/${api.entryFile}`);
+  if (!modifiedFiles.includes(`${api.entryFile}`)) modifiedFiles.push(`${api.entryFile}`);
 }
