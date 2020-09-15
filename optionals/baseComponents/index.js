@@ -1,9 +1,16 @@
 const fs = require("fs");
 const path = require("path");
-  
+
 module.exports = function addBaseComponents(api) {
   const root = api.resolve("src/../");
   fs.copyFileSync(path.join(__dirname, "resources/icons.svg"), path.join(root, "public/icons.svg"));
+  const addPlugin = (plugin, option) => {
+    if (api.hasPlugin(plugin)) {
+      if (!option) option = plugin;
+      api.injectImports(api.entryFile, `import ${option} from "./${option}"`);
+      api.injectRootOptions(api.entryFile, `${option}`);
+    }
+  }
 
   api.extendPackage({
     devDependencies: {
@@ -12,6 +19,9 @@ module.exports = function addBaseComponents(api) {
   });
 
   api.render("./template");
+  addPlugin("vuex", "store");
+  addPlugin("router");
+
   createdFiles.push("public/icons.svg");
   createdFiles.push("src/components/base/BaseIcon.vue");
   if (!modifiedFiles.includes(`${api.entryFile}`)) modifiedFiles.push(`${api.entryFile}`);

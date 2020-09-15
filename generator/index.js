@@ -14,23 +14,27 @@ module.exports = (api, options) => {
   if (options.tailwind) optionals.addTailwindConfig(api);
 
   api.onCreateComplete(() => {
-    emptyDirs();
+    if (!api.hasPlugin("router")) {
+      const directories = ["views/", "router/"];
+      emptyDirs([...directories, "components/"], () => false);
+      for (let dir of directories) fs.rmdirSync(api.resolve(`src/${dir}`));
+      modifiedFiles.splice(0, 2);
+    } else {
+      emptyDirs(["views/", "components/"], (file) => file === "Home.vue");
+    }
     showLogs();
   });
 
-  function emptyDirs() {
-    const directories = ["views/", "components/"];
+  function emptyDirs(directories, exception) {
     for (let i = 0; i < directories.length; i++) {
       const directory = `src/${directories[i]}`;
       const dirPath = api.resolve(directory);
       const files = fs.readdirSync(dirPath);
       for (const file of files) {
         const filePath = path.join(dirPath, file);
-        if (fs.lstatSync(filePath).isFile()) {
-          if (file !== "Home.vue") {
-            fs.unlinkSync(filePath);
-            deletedFiles.push(file);
-          }
+        if (fs.lstatSync(filePath).isFile() && !exception(file)) {
+          fs.unlinkSync(filePath);
+          deletedFiles.push(`${directory + file}`);
         }
       }
     }
