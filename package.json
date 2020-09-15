@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-clean",
   "version": "0.1.7",
-  "description": "vue-cli plugin to clean your vue project, leaving just an empty Home view.",
+  "description": "A vue-cli plugin that helps you bootstrap your Vue application by doing some common configurations.",
   "main": "index.js",
   "repository": {
     "type": "git",
