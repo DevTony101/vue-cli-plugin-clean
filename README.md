@@ -75,6 +75,9 @@ vue add clean
 ```
 It'll then ask you what additional features (the ones seen above) do you want to add, **by default they are all set to true**, which means they are all going to be added unless said otherwise.
 
+### What If I Don't Have Vuex or Vue-router?
+You may have seen that in the directory graph above there are three folders: `store/`, `router/` and `views/` that are specific to `vuex` and `vue-router` respectively, does that mean that you have to have them installed in your project in order to use this plugin? **No**, they are put in there just as an example. These files: `router/index.js`, `views/**` and `src/main.js` will be created and/or modified **only** if they need to and if the user (you) agrees to.
+
 **Note**: This plugin is only intended to be used right after a project is created as it deletes **all** the components. This might change in future versions.
 
 ## License
