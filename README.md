@@ -33,7 +33,7 @@ src
 ├── main.js
 ```
 
-- **Support for TailwindCSS**: If by any reason you want to use **Tailwind** as your CSS framework, this plugin can help you get started by automatically creating `postcss.config.js` and `tailwind.config.js` configuration files, in addition to creating a `tailwind.css` file on the `assets` folder.
+- **Support for TailwindCSS**: If by any reason you want to use **Tailwind** as your CSS framework, this plugin can help you get started by automatically creating configuration files for `postcss` and `tailwind`, in addition to creating a `tailwind.css` file on the `assets` folder.
 
 ```js
 // Default structure of the postcss.config.js config file
@@ -68,7 +68,7 @@ module.exports = {
 };
 ```
 
-## Getting Started 👨‍💻
+## Usage 👨‍💻
 After your project has been created with the `vue-cli` service, add the plugin like so:
 ```
 vue add clean
