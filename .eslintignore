@@ -1,0 +1,7 @@
+# ignore all template files
+
+optionals/baseComponents/*
+generator/*
+
+!optionals/baseComponents/index.js
+!generator/index.js
