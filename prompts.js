@@ -9,15 +9,6 @@ module.exports = pkg => {
       description: "In addition to deleting all pre-built components, it will add lodash and the necessary configuration for supporting base components.",
       link: "https://github.com/DevTony101/vue-cli-plugin-clean#Features",
     },
-    {
-      type: "confirm",
-      name: "tailwind",
-      message: "Add support for tailwind?",
-      default: true,
-      group: "Strongly recommended",
-      description: "This will install tailwind and add the necessary configuration files.",
-      link: "https://github.com/DevTony101/vue-cli-plugin-clean#Features",
-    }
   ]
 
   if ('@vue/eslint-config-prettier' in (pkg.devDependencies || {})) {

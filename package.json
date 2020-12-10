@@ -11,13 +11,11 @@
     "vue",
     "cli",
     "clean",
-    "clear",
     "utility",
     "plugin",
     "prettier",
-    "tailwind",
     "configuration",
-    "configurations"
+    "base component"
   ],
   "author": "Miguel Manjarres",
   "license": "MIT",

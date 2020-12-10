@@ -11,7 +11,6 @@ module.exports = (api, options) => {
 
   if (options.scaffold) optionals.addBaseComponents(api);
   if (options.prettier) optionals.addPrettierConfig(api);
-  if (options.tailwind) optionals.addTailwindConfig(api);
 
   api.onCreateComplete(() => {
     if (!api.hasPlugin("router")) {
