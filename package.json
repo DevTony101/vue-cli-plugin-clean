@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "A vue-cli plugin that helps you bootstrap your Vue application by doing some common configurations.",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DevTony101/vue-cli-plugin-clean.git"
@@ -24,6 +27,8 @@
   },
   "homepage": "https://github.com/DevTony101/vue-cli-plugin-clean#readme",
   "devDependencies": {
-    "eslint": "^7.15.0"
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
