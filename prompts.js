@@ -1,4 +1,4 @@
-module.exports = pkg => {
+module.exports = (pkg) => {
   const prompts = [
     {
       type: "confirm",
@@ -9,9 +9,9 @@ module.exports = pkg => {
       description: "In addition to deleting all pre-built components, it will add lodash and the necessary configuration for supporting base components.",
       link: "https://github.com/DevTony101/vue-cli-plugin-clean#Features",
     },
-  ]
+  ];
 
-  if ('@vue/eslint-config-prettier' in (pkg.devDependencies || {})) {
+  if ("@vue/eslint-config-prettier" in (pkg.devDependencies || {})) {
     prompts.push({
       type: "confirm",
       name: "prettier",
@@ -24,4 +24,4 @@ module.exports = pkg => {
   }
 
   return prompts;
-}
+};

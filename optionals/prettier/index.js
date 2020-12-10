@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-undef */
+
 module.exports = function addPrettierConfig(api) {
   api.render((files) => {
     files[".eslintrc.js"] = api.genJSConfig({
@@ -28,4 +31,4 @@ module.exports = function addPrettierConfig(api) {
 
   modifiedFiles.push(".eslintrc.js");
   createdFiles.push(".prettierrc.js");
-}
+};
