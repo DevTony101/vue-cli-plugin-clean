@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/DevTony101/vue-cli-plugin-clean/issues"
   },
-  "homepage": "https://github.com/DevTony101/vue-cli-plugin-clean#readme"
+  "homepage": "https://github.com/DevTony101/vue-cli-plugin-clean#readme",
+  "devDependencies": {
+    "eslint": "^7.15.0"
+  }
 }
