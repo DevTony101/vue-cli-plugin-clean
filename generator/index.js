@@ -12,8 +12,15 @@ module.exports = (api, options) => {
   global.createdFiles = [];
   api.render("./template");
 
-  if (options.scaffold) optionals.addBaseComponents(api);
   if (options.prettier) optionals.addPrettierConfig(api);
+  if (options.scaffold) {
+    optionals.addBaseComponents(api);
+    api.extendPackage({
+      scripts: {
+        basec: 'vue-cli-service basec'
+      }
+    });
+  }
 
   function emptyDirs(directories, exception) {
     for (let i = 0; i < directories.length; i++) {
@@ -31,12 +38,7 @@ module.exports = (api, options) => {
   }
 
   function showLogs() {
-    const colors = {
-      GREEN: "\x1b[32m%s\x1b[0m",
-      RED: "\x1b[31m%s\x1b[0m",
-      YELLOW: "\x1b[33m%s\x1b[0m",
-    };
-
+    const colors = require("./../utils/colors");
     log("\n");
     for (const file of deletedFiles) log(colors.RED, "Deleted file: ", file);
     for (const file of modifiedFiles) log(colors.YELLOW, "Modified file: ", file);
