@@ -1,9 +1,11 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable global-require */
 module.exports = (args, api) => {
   const fs = require("fs");
-  const { EOL } = require('os');
-  const { RED } = require("./../../utils/colors");
+  const { EOL } = require("os");
+  const { RED } = require("../../utils/colors");
   const componentName = args._[0];
-  const scaffoldButton = args['scaffold-button'];
+  const scaffoldButton = args["scaffold-button"];
   const preffix = args.preffix ?? "Base";
 
   if (componentName || scaffoldButton) {
@@ -16,16 +18,16 @@ module.exports = (args, api) => {
     }
     const strMatch = scaffoldButton ? /name: "BaseButton",/ : /name: "base",/;
     const content = replaceContent(`${__dirname}/templates/Base${scaffoldButton ? "Button" : ""}.vue`, strMatch, `  name: "${filename}",`);
-    fs.writeFileSync(dirPath, content.join(EOL), { encoding: 'utf-8' });
+    fs.writeFileSync(dirPath, content.join(EOL), { encoding: "utf-8" });
     console.log(`\n${filename} created succesfully`);
   } else {
     console.log(RED, "\nError: You must supply either a name or a scaffold option");
   }
 
   function replaceContent(path, strMatch, strReplace) {
-    const content = fs.readFileSync(path, { encoding: 'utf-8' });
+    const content = fs.readFileSync(path, { encoding: "utf-8" });
     const lines = content.split(/\r?\n/g);
-    const renderIndex = lines.findIndex(line => line.match(strMatch));
+    const renderIndex = lines.findIndex((line) => line.match(strMatch));
     lines[renderIndex] = strReplace;
     return lines;
   }
@@ -33,4 +35,4 @@ module.exports = (args, api) => {
   function capitalize(str) {
     return str[0].toUpperCase() + str.substring(1);
   }
-}
+};

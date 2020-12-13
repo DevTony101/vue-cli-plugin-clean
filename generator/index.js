@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const optionals = require("../optionals/index");
+const colors = require("../utils/colors");
 
 const { log } = console;
 
@@ -17,8 +18,8 @@ module.exports = (api, options) => {
     optionals.addBaseComponents(api);
     api.extendPackage({
       scripts: {
-        basec: 'vue-cli-service basec'
-      }
+        basec: "vue-cli-service basec",
+      },
     });
   }
 
@@ -38,7 +39,6 @@ module.exports = (api, options) => {
   }
 
   function showLogs() {
-    const colors = require("./../utils/colors");
     log("\n");
     for (const file of deletedFiles) log(colors.RED, "Deleted file: ", file);
     for (const file of modifiedFiles) log(colors.YELLOW, "Modified file: ", file);
