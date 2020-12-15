@@ -3,19 +3,18 @@ module.exports = (api) => {
     match: /vue-cli-service basec/,
     description: "Generates a new base component",
     link: "https://github.com/DevTony101/vue-cli-plugin-clean#features-",
-    icon: "description",
     prompts: [
-      {
-        name: "name",
-        type: "input",
-        default: "button",
-        description: "The name of the base component (without the preffix)",
-      },
       {
         name: "preffix",
         type: "input",
         default: "Base",
         description: "The preffix for the name of the component (it defaults to 'Base')",
+      },
+      {
+        name: "name",
+        type: "input",
+        default: "button",
+        description: "The name of the base component",
       },
       {
         name: "scaffold",
