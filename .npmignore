@@ -1,0 +1,10 @@
+# default
+.vscode
+node_modules
+
+# ignore docs files
+docs
+
+# ignore eslint files
+.eslintignore
+.eslintrc.js
