@@ -15,7 +15,8 @@ Table of Contents
   * [Usage](#usage)
     * [Getting started](#getting-started)
     * [Using the BaseIcon component](#using-the-baseicon-component)
-    * [Using the basec command](#using-the-basec-command)
+    * [Using the `basec` command](#using-the-basec-command)
+      * [Using `basec` through NPM scripts](#using-basec-through-npm-scripts)
   * [About](#about)
     * [Why should you use this plugin?](#why-should-you-use-this-plugin)
     * [FAQ](#faq)
@@ -156,6 +157,16 @@ vue-cli-service basec BuyButton --scaffold-button --prefix custom
 ```
 
 When executed, the command will create a new base component called `CustomBuyButton.vue`.
+
+#### Using `basec` through NPM scripts
+You can also use the `basec` command through the npm script that is created when the plugin is installed. Be aware however, that if you want to pass the additional options
+seen in the previous section you must put them after a double dash like so:
+
+```
+npm run basec BuyButton -- --scaffold-button --prefix custom
+```
+
+This will have the same result as the previous example.
 
 ## About
 ### Why should you use this plugin?
