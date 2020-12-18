@@ -108,6 +108,54 @@ Then you can use the `BaseIcon` component like this:
 The `icon` prop is **required**. Note that the value you pass to the `icon` prop must match the value you put on the `id` field of the svg element you want to render.
 
 ### Using the `basec` command
+When the support for the base components is added, the plugin adds a new vue-cli command called `basec`. The `basec` command lets you create a new base component
+directly from the command line.
+
+```
+Usage: vue-cli-service basec name [options]
+
+Options:
+
+  --scaffold-button  Generates a predefined base component for a button
+  --prefix          The prefix for the name of the component. By default 'Base'
+```
+
+The `name` is the name of the base component (without 'Base' or any other prefix).
+
+#### Examples
+##### Creating a dummy base component
+Let's say we want to create a 'dummy' base component for prototyping purposes. We would do as follows:
+
+```
+vue-cli-service basec dummy
+```
+
+When executed, the command will create a new base component called `BaseDummy.vue`.
+
+##### Creating a scaffolded button component
+Sometimes you would like to test your design quickly by adding new components. Among the most used components are buttons. The `basec` command lets you create a
+brand new button component, scaffolded with everything you would need:
+
+- Binding for listeners
+- Binding for attributes that are _not_ inherited by the div container
+- Some default styles and animations
+
+Let's then say we want to create a `BuyButton` for an e-commerce site. We would do as follows:
+
+```
+vue-cli-service basec BuyButton --scaffold-button
+```
+
+When executed, the command will create a new base component called `BaseBuyButton.vue`.
+
+##### Defining a different prefix
+In certain cases you might want to define a different prefix than 'Base'. Although not recommended the `basec` command lets you define a different prefix like so:
+
+```
+vue-cli-service basec BuyButton --scaffold-button --prefix custom
+```
+
+When executed, the command will create a new base component called `CustomBuyButton.vue`.
 
 ## About
 ### Why should you use this plugin?
