@@ -22,7 +22,43 @@ Table of Contents
 
 ## Features
 ### General
+The main goal of this plugin is to quickly set up a project by deleting some files and components created by the Vue CLI service. By default this plugin will:
+
+- Delete everything in the `components` folder
+- Delete everything in the `views` folder except the `Home.vue` file
+- Re-write the `router/index.js` file to only include the route to the `Home.vue` file
+- Re-write the `App.vue` file to remove all the boilerplate code
+
 ### Support for base components
+This an opt-in feature that you can enable when installing this plugin (go to the [getting started](#general) section if you want to know more about that).
+
+It is a good practice that you keep a handful of components that you are going to use across all your Vue application (like buttons, form inputs, etc). These type of components are called **Base Components**. Normally you would add them to the global scope by editing the `main.js` file but, if you chose to add this feature, this plugin automatically adds the necessary code to register base components to a process called [global registering](https://vuejs.org/v2/guide/components-registration.html#Automatic-Global-Registration-of-Base-Components).
+
+In addition to that, this plugin will create a base component called `BaseIcon`, a component you can use to display **SVG** icons effortlessly. If you want know how to use it, refer to the [using the BaseIcon component](#using-the-baseicon-component) section.
+
+After all the configurations are done, the file structure of your app will the look something like this:
+
+```diff
+  public
+  ├── favicon.ico
++ ├── icons.svg
+  ├── index.html
+  src
+  └── assets
+  │   ├── logo.png
+  └── components
+  │   └── base
++ │       ├── BaseIcon.vue
+  └── router
+  │   ├── index.js
+  └── store
+      ├── index.js
+  └── views
+  │   ├── Home.vue
+  ├── App.vue
+  ├── main.js
+```
+
 ### Prettier configuration
 
 ## Usage
