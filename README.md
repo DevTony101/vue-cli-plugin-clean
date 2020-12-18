@@ -54,7 +54,7 @@ After all the configurations are done, the file structure of your app will the l
   └── router
   │   ├── index.js
   └── store
-      ├── index.js
+  │   ├── index.js
   └── views
   │   ├── Home.vue
   ├── App.vue
@@ -87,9 +87,8 @@ After that, the vue-cli service will install the plugin and then ask you about s
 - [Support for base components](#support-for-base-components)
 - [Additional prettier configuration](#prettier-configuration)
 
-Both of those features are **optional** but beware, the vue-cli service will try to add them by _default_.
-
-When the configurations are complete, the plugin will notify you about what files were created, modified or deleted.
+Both of those features are **optional** but beware, the vue-cli service will try to add them by _default_. when the configurations are complete, the plugin will 
+notify you about what files were _created_, _modified_ or _deleted_.
 
 ### Using the BaseIcon component
 The `BaseIcon` component renders an svg element that is located on the `icons.svg` file. The way you add a new svg elements is by writing the following inside the `defs` tags:
