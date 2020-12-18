@@ -17,6 +17,7 @@ Table of Contents
     * [Using the BaseIcon component](#using-the-baseicon-component)
     * [Using the `basec` command](#using-the-basec-command)
       * [Using `basec` through NPM scripts](#using-basec-through-npm-scripts)
+      * [Using `basec` through the Vue UI](#using-basec-through-the-vue-ui)
   * [About](#about)
     * [Why should you use this plugin?](#why-should-you-use-this-plugin)
     * [FAQ](#faq)
@@ -167,6 +168,35 @@ npm run basec BuyButton -- --scaffold-button --prefix custom
 ```
 
 This will have the same result as the previous example.
+
+#### Using `basec` through the Vue UI
+You can also use the `basec` command through the Vue user interface like so:
+
+- In the UI, open your proyect and go to the `Tasks` section, in a newly created proyect there are going to be three basic commands: `serve`, `build` and `lint`. Vue Clean also adds a new command called `basec`.
+
+- You can configure the options for the `basec` command in the modal window opened by the `Parameters` button. In the following example we are replicating the `BaseDummy` component we created in the previous section.
+
+<p align="center">
+ <img src="https://github.com/DevTony101/vue-cli-plugin-clean/blob/master/docs/images/ui_doc_2.png" />
+</p>
+
+Now if you press the `Run task` button, the following message will appear on the console:
+
+<p align="center">
+ <img src="https://github.com/DevTony101/vue-cli-plugin-clean/blob/master/docs/images/ui_doc_3.png" />
+</p>
+
+- Through the modal window you can also choose what template you want your component to use through a combobox element. In the following example we are replicating the `CustomBuyButton` we created in the previous section.
+
+<p align="center">
+ <img src="https://github.com/DevTony101/vue-cli-plugin-clean/blob/master/docs/images/ui_doc_4.png" />
+</p>
+
+The result is the same as you would expect:
+
+<p align="center">
+ <img src="https://github.com/DevTony101/vue-cli-plugin-clean/blob/master/docs/images/ui_doc_5.png" />
+</p>
 
 ## About
 ### Why should you use this plugin?
