@@ -9,12 +9,18 @@ module.exports = (args, api) => {
   const prefix = args.prefix ? capitalize(args.prefix) : "Base";
 
   if (componentName || scaffoldButton) {
-    const filename = componentName ? `${prefix + capitalize(componentName)}` : "BaseButton";
+    let filename = componentName ? `${prefix + capitalize(componentName)}` : "BaseButton";
     let directory = `src/components/base/${filename}.vue`;
     let dirPath = api.resolve(directory);
+    let auxFilename = filename;
     while (fs.existsSync(dirPath)) {
-      directory = `src/components/base/${filename}-${Math.random().toString(36).slice(-5)}.vue`;
+      auxFilename = `${filename}-${Math.random().toString(36).slice(-5)}`;
+      directory = `src/components/base/${auxFilename}.vue`;
       dirPath = api.resolve(directory);
+    }
+    if (filename != auxFilename) {
+      console.log(`\n${filename} already existed.`);
+      filename = auxFilename;
     }
     const content = replaceContent(`${__dirname}/templates/Base${scaffoldButton ? "Button" : ""}.vue`, /name: "base",/, `  name: "${filename}",`);
     fs.writeFileSync(dirPath, content.join(EOL), { encoding: "utf-8" });
