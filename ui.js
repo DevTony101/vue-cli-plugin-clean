@@ -2,7 +2,7 @@ module.exports = (api) => {
   api.describeTask({
     match: /vue-cli-service basec/,
     description: "Generates a new base component",
-    link: "https://github.com/DevTony101/vue-cli-plugin-clean#features-",
+    link: "https://github.com/DevTony101/vue-cli-plugin-clean#using-the-basec-command",
     prompts: [
       {
         name: "preffix",
