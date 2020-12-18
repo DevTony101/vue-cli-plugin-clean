@@ -60,6 +60,17 @@ After all the configurations are done, the file structure of your app will the l
 ```
 
 ### Prettier configuration
+This an opt-in feature that you can enable when installing this plugin (go to the [getting started](#general) section if you want to know more about that).
+
+If you chose Prettier as your code formatter, you might want to configure it with some additional options. This plugin adds a `.prettierrc.js` configuration file to your root folder with some default options. (This will only surt effect if the `@vue/eslint-config-prettier` plugin is installed on your project).
+
+```js
+// Default structure of the .prettierrc.js config file
+module.exports = {
+  trailingComma: "es5",
+  vueIndentScriptAndStyle: true,
+};
+```
 
 ## Usage
 ### Getting started
