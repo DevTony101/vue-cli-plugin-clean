@@ -6,10 +6,10 @@ module.exports = (args, api) => {
   const { RED } = require("../../utils/colors");
   const componentName = args._[0];
   const scaffoldButton = args["scaffold-button"];
-  const preffix = args.preffix ? capitalize(args.preffix) : "Base";
+  const prefix = args.preffix ? capitalize(args.preffix) : "Base";
 
   if (componentName || scaffoldButton) {
-    const filename = componentName ? `${preffix + capitalize(componentName)}` : "BaseButton";
+    const filename = componentName ? `${prefix + capitalize(componentName)}` : "BaseButton";
     let directory = `src/components/base/${filename}.vue`;
     let dirPath = api.resolve(directory);
     while (fs.existsSync(dirPath)) {

@@ -7,7 +7,7 @@ module.exports = (api) => {
     options: {
       name: "The name of the component",
       "--scaffold-button": "Generates a predefined base component for a button",
-      "--preffix": "The preffix for the name of the component. By default 'Base'",
+      "--prefix": "The prefix for the name of the component. By default 'Base'",
     },
   }, (args) => basec(args, api));
 };
