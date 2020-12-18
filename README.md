@@ -177,3 +177,12 @@ task, doing all the work so you can start your project as soon as possible. Also
 - **It has a unique set of features**: This plugin offers a unique set of tools and features that will help you create your next Vue project right away!
 
 ### FAQ
+
+#### What if I don't have vuex or vue-router?
+You may have seen that in the directory graph above there are three folders: `store/`, `router/` and `views/` that are specific to `vuex` and `vue-router` respectively, does that mean that you have to have them installed in your project in order to use this plugin? **No**, they are put in there just as an example. These files: `router/index.js`, `views/**` and `src/main.js` will be created and/or modified **only** if they need to and if the user (you) agrees to.
+
+#### What if I use a code formatter other than Prettier?
+Currently, Vue Clean does not support other code formatters for additional configuration. This will be fixed in future versions.
+
+#### What other options exist for scaffolding a base component?
+Currently, Vue Clean only supports the button scaffolding. Form input based components are to be in next updates.
