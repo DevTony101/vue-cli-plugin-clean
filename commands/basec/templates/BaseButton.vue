@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "BaseButton",
+  name: "base",
   inheritAttrs: false,
 };
 </script>

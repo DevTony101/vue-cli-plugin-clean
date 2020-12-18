@@ -5,10 +5,10 @@ module.exports = (api) => {
     link: "https://github.com/DevTony101/vue-cli-plugin-clean#using-the-basec-command",
     prompts: [
       {
-        name: "preffix",
+        name: "prefix",
         type: "input",
         default: "Base",
-        description: "The preffix for the name of the component (it defaults to 'Base')",
+        description: "The prefix for the name of the component (it defaults to 'Base')",
       },
       {
         name: "name",
@@ -35,7 +35,7 @@ module.exports = (api) => {
     ],
     onBeforeRun: async ({ answers, args }) => {
       if (answers.name && answers.name.trim()) args.push(answers.name);
-      if (answers.preffix && answers.preffix.trim()) args.push("--preffix", answers.preffix);
+      if (answers.prefix && answers.prefix.trim()) args.push("--prefix", answers.prefix);
       switch (answers.scaffold) {
         case "button":
           args.push("--scaffold-button");

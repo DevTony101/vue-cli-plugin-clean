@@ -6,7 +6,7 @@ module.exports = (args, api) => {
   const { RED } = require("../../utils/colors");
   const componentName = args._[0];
   const scaffoldButton = args["scaffold-button"];
-  const prefix = args.preffix ? capitalize(args.preffix) : "Base";
+  const prefix = args.prefix ? capitalize(args.prefix) : "Base";
 
   if (componentName || scaffoldButton) {
     const filename = componentName ? `${prefix + capitalize(componentName)}` : "BaseButton";
@@ -16,8 +16,7 @@ module.exports = (args, api) => {
       directory = `src/components/base/${filename}-${Math.random().toString(36).slice(-5)}.vue`;
       dirPath = api.resolve(directory);
     }
-    const strMatch = scaffoldButton ? /name: "BaseButton",/ : /name: "base",/;
-    const content = replaceContent(`${__dirname}/templates/Base${scaffoldButton ? "Button" : ""}.vue`, strMatch, `  name: "${filename}",`);
+    const content = replaceContent(`${__dirname}/templates/Base${scaffoldButton ? "Button" : ""}.vue`, /name: "base",/, `  name: "${filename}",`);
     fs.writeFileSync(dirPath, content.join(EOL), { encoding: "utf-8" });
     console.log(`\n${filename} created succesfully`);
   } else {
