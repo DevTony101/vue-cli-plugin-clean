@@ -109,7 +109,7 @@ Then you can use the `BaseIcon` component like this:
 The `icon` prop is **required**. Note that the value you pass to the `icon` prop must match the value you put on the `id` field of the svg element you want to render.
 
 ### Using the `basec` command
-When the support for the base components is added, the plugin adds a new vue-cli command called `basec`. The `basec` command lets you create a new base component
+When the [support for the base components](#support-for-base-components) is added, the plugin adds a new vue-cli command called `basec`. The `basec` command lets you create a new base component
 directly from the command line.
 
 ```
@@ -179,7 +179,7 @@ task, doing all the work so you can start your project as soon as possible. Also
 ### FAQ
 
 #### What if I don't have vuex or vue-router?
-You may have seen that in the directory graph above there are three folders: `store/`, `router/` and `views/` that are specific to `vuex` and `vue-router` respectively, does that mean that you have to have them installed in your project in order to use this plugin? **No**, they are put in there just as an example. These files: `router/index.js`, `views/**` and `src/main.js` will be created and/or modified **only** if they need to and if the user (you) agrees to.
+You may have seen that in the [directory graph](#support-for-base-components) above there are three folders: `store/`, `router/` and `views/` that are specific to `vuex` and `vue-router` respectively, does that mean that you have to have them installed in your project in order to use this plugin? **No**, they are put in there just as an example. These files: `router/index.js`, `views/**` and `src/main.js` will be created and/or modified **only** if they need to and if the user (you) agrees to.
 
 #### What if I use a code formatter other than Prettier?
 Currently, Vue Clean does not support other code formatters for additional configuration. This will be fixed in future versions.
