@@ -4,7 +4,7 @@
 [![downloads](https://img.shields.io/npm/dm/vue-cli-plugin-clean?style=flat-square&logo=npm)](https://www.npmjs.com/package/vue-cli-plugin-clean)
 [![dependencies](https://img.shields.io/david/devtony101/vue-cli-plugin-clean?style=flat-square&logo=dependabot)](https://github.com/DevTony101/vue-cli-plugin-clean)
 
-A vue 2.x plugin that helps you bootstrap your Vue application by performing some common configurations.
+A Vue 2.x plugin that helps you bootstrap your application by performing some common configurations.
 
 Table of Contents
 =================
@@ -66,7 +66,7 @@ After all the configurations are done, the file structure of your app will the l
 ### Prettier configuration
 This an opt-in feature that you can enable when installing this plugin (go to the [getting started](#general) section if you want to know more about that).
 
-If you chose Prettier as your code formatter, you might want to configure it with some additional options. This plugin adds a `.prettierrc.js` configuration file to your root folder with some default options. (This will only surt effect if the `@vue/eslint-config-prettier` plugin is installed on your project).
+If you chose Prettier as your code formatter, you might want to configure it with some additional tweaks. This plugin adds a `.prettierrc.js` configuration file to your root folder with some default options. (It will only surt effect if the `@vue/eslint-config-prettier` plugin is installed on your project).
 
 ```js
 // Default structure of the .prettierrc.js config file
@@ -89,7 +89,7 @@ After that, the vue-cli service will install the plugin and then ask you about s
 - [Support for base components](#support-for-base-components)
 - [Additional prettier configuration](#prettier-configuration)
 
-Both of those features are **optional** but beware, the vue-cli service will try to add them by _default_. when the configurations are complete, the plugin will 
+Both of those features are **optional** but beware, the vue-cli service will try to add them by _default_. When the configurations are complete, the plugin will 
 notify you about what files were _created_, _modified_ or _deleted_.
 
 ### Using the BaseIcon component
@@ -119,7 +119,7 @@ Usage: vue-cli-service basec name [options]
 Options:
 
   --scaffold-button  Generates a predefined base component for a button
-  --prefix          The prefix for the name of the component. By default 'Base'
+  --prefix           The prefix for the name of the component. By default 'Base'
 ```
 
 The `name` is the name of the base component (without 'Base' or any other prefix).
@@ -172,7 +172,7 @@ This will have the same result as the previous example.
 #### Using `basec` through the Vue UI
 You can also use the `basec` command through the Vue user interface like so:
 
-- In the UI, open your proyect and go to the `Tasks` section, in a newly created proyect there are going to be three basic commands: `serve`, `build` and `lint`. Vue Clean also adds a new command called `basec`.
+- In the UI, open your project and go to the `Tasks` section, in a newly created project there are going to be three basic commands: `serve`, `build` and `lint`. Vue Clean also adds a new command called `basec`.
 
 - You can configure the options for the `basec` command in the modal window opened by the `Parameters` button. In the following example we are replicating the `BaseDummy` component we created in the previous section.
 
