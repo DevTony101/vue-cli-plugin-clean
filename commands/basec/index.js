@@ -3,7 +3,7 @@
 module.exports = (args, api) => {
   const fs = require("fs");
   const { EOL } = require("os");
-  const { RED } = require("../../utils/colors");
+  const { RED, GREEN } = require("../../utils/colors");
   const componentName = args._[0];
   const scaffoldButton = args["scaffold-button"];
   const prefix = args.prefix ? capitalize(args.prefix) : "Base";
@@ -24,7 +24,7 @@ module.exports = (args, api) => {
     }
     const content = replaceContent(`${__dirname}/templates/Base${scaffoldButton ? "Button" : ""}.vue`, /name: "base",/, `  name: "${filename}",`);
     fs.writeFileSync(dirPath, content.join(EOL), { encoding: "utf-8" });
-    console.log(`\n${filename} created succesfully`);
+    console.log(GREEN, "CREATED ", directory);
   } else {
     console.log(RED, "\nError: You must supply either a name or a scaffold option");
   }

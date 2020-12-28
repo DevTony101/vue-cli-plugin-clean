@@ -40,9 +40,9 @@ module.exports = (api, options) => {
 
   function showLogs() {
     log("\n");
-    for (const file of deletedFiles) log(colors.RED, "Deleted file: ", file);
-    for (const file of modifiedFiles) log(colors.YELLOW, "Modified file: ", file);
-    for (const file of createdFiles) log(colors.GREEN, "Created file: ", file);
+    for (const file of deletedFiles) log(colors.RED, "DELETED ", file);
+    for (const file of modifiedFiles) log(colors.YELLOW, "MODIFIED ", file);
+    for (const file of createdFiles) log(colors.GREEN, "CREATED ", file);
   }
 
   api.onCreateComplete(() => {
