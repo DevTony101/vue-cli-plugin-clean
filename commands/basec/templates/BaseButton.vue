@@ -1,7 +1,12 @@
 <template>
   <div>
-    <button v-on="$listeners" class="button" v-bind="$attrs">
-      <slot />
+    <button
+      :style="{ width: wh + 'px', height: ht + 'px' }"
+      v-on="$listeners"
+      class="button"
+      v-bind="$attrs"
+    >
+      <slot> Submit </slot>
     </button>
   </div>
 </template>
@@ -10,13 +15,21 @@
 export default {
   name: "base",
   inheritAttrs: false,
+  props: {
+    wh: {
+      type: String,
+      default: "150",
+    },
+    ht: {
+      type: String,
+      default: "25",
+    },
+  },
 };
 </script>
 
 <style scoped>
 .button {
-  height: 25px;
-  width: 75px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
