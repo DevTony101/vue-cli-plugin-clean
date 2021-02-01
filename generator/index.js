@@ -23,7 +23,7 @@ module.exports = (api, options) => {
     });
   }
 
-  function emptyDirs(directories, exception) {
+  function emptyDirs(directories, exception, audit = true) {
     for (let i = 0; i < directories.length; i++) {
       const directory = `src/${directories[i]}`;
       const dirPath = api.resolve(directory);
@@ -32,7 +32,9 @@ module.exports = (api, options) => {
         const filePath = path.join(dirPath, file);
         if (fs.lstatSync(filePath).isFile() && !exception(file)) {
           fs.unlinkSync(filePath);
-          deletedFiles.push(`${directory + file}`);
+          if (audit) {
+            deletedFiles.push(`${directory + file}`);
+          }
         }
       }
     }
@@ -47,13 +49,20 @@ module.exports = (api, options) => {
 
   api.onCreateComplete(() => {
     if (!api.hasPlugin("router")) {
-      const directories = ["views/", "router/"];
-      emptyDirs([...directories, "components/"], () => false);
+      emptyDirs(["router/"], () => false, false);
+      emptyDirs(["views/", "components/"], () => false);
       for (const dir of directories) fs.rmdirSync(api.resolve(`src/${dir}`));
       modifiedFiles.splice(0, 2);
     } else {
       emptyDirs(["views/", "components/"], (file) => file === "Home.vue");
     }
+
+    if (!api.hasPlugin("vuex")) {
+      emptyDirs(["store/modules/", "store/"], () => false, false);
+      fs.rmdirSync(api.resolve("src/store/modules"));
+      fs.rmdirSync(api.resolve("src/store"));
+    }
+
     showLogs();
   });
 };
