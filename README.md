@@ -12,6 +12,7 @@ Table of Contents
     * [General](#general)
     * [Support for base components](#support-for-base-components)
     * [Prettier configuration](#prettier-configuration)
+    * [Automatic import for Vuex modules](#automatic-import-for-vuex-modules)
   * [Usage](#usage)
     * [Getting started](#getting-started)
     * [Using the BaseIcon component](#using-the-baseicon-component)
@@ -75,6 +76,9 @@ module.exports = {
   vueIndentScriptAndStyle: true,
 };
 ```
+
+### Automatic import for Vuex modules
+If you use **Vuex** in your project, Vue Clean will create a folder called `store/modules`. Inside of it there will be an `index.js` file that will automatically export all of the files you create inside the folder! Say goodbye to those days where you had to manually import your modules inside the Vuex instance. What's even better, there's no configuration needed from your side, you can start using right out-of-the-box after Vue Clean has successfully been installed.
 
 ## Usage
 ### Getting started
