@@ -18,7 +18,7 @@ module.exports = (args, api) => {
       directory = `src/components/base/${auxFilename}.vue`;
       dirPath = api.resolve(directory);
     }
-    if (filename != auxFilename) {
+    if (filename !== auxFilename) {
       console.log(`\n${filename} already existed.`);
       filename = auxFilename;
     }
