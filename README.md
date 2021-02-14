@@ -3,6 +3,7 @@
 [![version](https://img.shields.io/npm/v/vue-cli-plugin-clean?style=flat-square&logo=npm)](https://www.npmjs.com/package/vue-cli-plugin-clean)
 [![downloads](https://img.shields.io/npm/dm/vue-cli-plugin-clean?style=flat-square&logo=npm)](https://www.npmjs.com/package/vue-cli-plugin-clean)
 [![dependencies](https://img.shields.io/david/devtony101/vue-cli-plugin-clean?style=flat-square&logo=dependabot)](https://github.com/DevTony101/vue-cli-plugin-clean)
+[![total downloads](https://img.shields.io/npm/dt/vue-cli-plugin-clean?color=red&label=total%20downloads&logo=npm&style=flat-square)](https://www.npmjs.com/package/vue-cli-plugin-clean)
 
 A Vue 2.x plugin that helps you bootstrap your application by performing some common configurations.
 
